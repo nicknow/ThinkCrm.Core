@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>069bdf2f-06d7-4866-ab94-27faec88283f</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>ThinkCrm.Core</Id>
+    <Version>0.1.1-beta</Version>
+    <Title>ThinkCrm.Core</Title>
+    <Authors>Nicolas Nowinski</Authors>
+    <Owners>Nicolas Nowinski</Owners>
+    <Summary>Simplifies the necessary plumbing for a CRM plugin development.</Summary>
+    <Description>Simplifies the necessary plumbing for a CRM plugin development.</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>https://github.com/nicknow/ThinkCrm.Core</ProjectUrl>
+    <LicenseUrl>https://github.com/nicknow/ThinkCrm.Core/LICENSE.MD</LicenseUrl>
+    <Copyright>Copyright © 2014-2016 Nicolas Nowinski.</Copyright>
+    <Tags>Dynamics, CRM, C#, Plugin, Testing</Tags>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThinkCrm.Core\ThinkCrm.Core.csproj" />
+  </ItemGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
