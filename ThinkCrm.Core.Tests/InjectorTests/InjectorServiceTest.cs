@@ -36,5 +36,28 @@ namespace ThinkCrm.Core.Tests.InjectorTests
             Assert.IsType<DummyService>(getObj);
             Assert.True(getObj.Callme());
         }
+
+        [Fact]
+        public void Prove_Double_Injection_Implemented_Throws_Argument_Exception()
+        {
+            var injector = new InjectorService();
+
+            injector.RegisterType<IDummyService>(new DummyService());
+
+            Assert.Throws<ArgumentException>(() => injector.RegisterType<IDummyService>(new DummyService()));      
+
+        }
+
+        [Fact]
+        public void Prove_Double_Injection_Creation_Throws_Argument_Exception()
+        {
+            var injector = new InjectorService();
+
+            injector.RegisterType<IDummyService, DummyService>();
+
+            Assert.Throws<ArgumentException>(() => injector.RegisterType<IDummyService, DummyService>());
+
+
+        }
     }
 }

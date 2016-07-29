@@ -19,8 +19,9 @@ namespace ThinkCrm.Core.Injector
         public void RegisterType<T>(T instance)
         {
             if (instance == null) throw new ArgumentNullException(nameof(instance));
-            if (_objectDictionary.ContainsKey(typeof(T))) _objectDictionary.Remove(typeof(T));
-            else _objectDictionary.Add(typeof(T), new Tuple<bool, object>(false,instance));
+            if (_objectDictionary.ContainsKey(typeof(T))) throw new ArgumentException($"Key already exists in Object Dictionary: {typeof(T)}.");
+
+            _objectDictionary.Add(typeof(T), new Tuple<bool, object>(false,instance));
         }
 
         public T GetObject<T>() where T : class 
