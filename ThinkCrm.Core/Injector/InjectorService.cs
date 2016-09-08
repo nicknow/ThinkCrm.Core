@@ -9,14 +9,14 @@ namespace ThinkCrm.Core.Injector
         //Make Tuple bool value True if Object should be created new on each request
         private readonly Dictionary<Type, Tuple<bool, object>> _objectDictionary = new Dictionary<Type, Tuple<bool,object>>();        
 
-        public void RegisterType<T,TY>() where TY : T, new()
+        public void RegisterType<T,TY>() where T : class where TY : T, new()
         {
             if (_objectDictionary.ContainsKey(typeof(T))) throw new ArgumentException($"Key already exists in Object Dictionary: {typeof(T)}.");
 
             _objectDictionary.Add(typeof(T), new Tuple<bool, object>(true,typeof(TY)));
         }
 
-        public void RegisterType<T>(T instance)
+        public void RegisterType<T>(T instance) where T : class 
         {
             if (instance == null) throw new ArgumentNullException(nameof(instance));
             if (_objectDictionary.ContainsKey(typeof(T))) throw new ArgumentException($"Key already exists in Object Dictionary: {typeof(T)}.");
