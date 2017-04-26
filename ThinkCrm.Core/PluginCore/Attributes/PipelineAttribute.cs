@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xrm.Sdk;
 using ThinkCrm.Core.Interfaces;
 using ThinkCrm.Core.PluginCore.Helper;
@@ -25,6 +21,11 @@ namespace ThinkCrm.Core.PluginCore.Attributes
 
         private readonly ExecutionMode _executionMode;
 
+        /// <summary>
+        /// Ensures that <see cref="IPluginExecutionContext.Mode"/> is the specified value.
+        /// </summary>
+        /// <param name="executionMode">Value that it must meet to continue</param>
+        /// <param name="throwException">Default is true, which causes an exception to be raised. Set to false to cause plugin to end gracefully.</param>
         public PipelineAttribute(ExecutionMode executionMode, bool throwException = true)
         {
             if (!Enum.IsDefined(typeof(ExecutionMode), executionMode))
@@ -35,6 +36,11 @@ namespace ThinkCrm.Core.PluginCore.Attributes
             _checkExecutionMode = true;
         }
 
+        /// <summary>
+        /// Ensures that <see cref="IPluginExecutionContext.Mode"/> is the specified value.
+        /// </summary>
+        /// <param name="isolationMode">Value that it must meet to continue</param>
+        /// <param name="throwException">Default is true, which causes an exception to be raised. Set to false to cause plugin to end gracefully.</param>
         public PipelineAttribute(IsolationMode isolationMode, bool throwException = true)
         {
             if (!Enum.IsDefined(typeof(IsolationMode), isolationMode))
@@ -45,6 +51,11 @@ namespace ThinkCrm.Core.PluginCore.Attributes
             _checkIsolationMode = true;
         }
 
+        /// <summary>
+        /// Ensures that <see cref="IPluginExecutionContext.Stage"/> is the specified value.
+        /// </summary>
+        /// <param name="pipelineStage">Value that it must meet to continue</param>
+        /// <param name="throwException">Default is true, which causes an exception to be raised. Set to false to cause plugin to end gracefully.</param>
         public PipelineAttribute(PipelineStage pipelineStage, bool throwException = true)
         {
             if (!Enum.IsDefined(typeof(PipelineStage), pipelineStage))
@@ -55,6 +66,11 @@ namespace ThinkCrm.Core.PluginCore.Attributes
             _checkPipelineStage = true;
         }
 
+        /// <summary>
+        /// Ensures that <see cref="IPluginExecutionContext.MessageName"/> is the specified value.
+        /// </summary>
+        /// <param name="messageType">Value that it must meet to continue</param>
+        /// <param name="throwException">Default is true, which causes an exception to be raised. Set to false to cause plugin to end gracefully.</param>
         public PipelineAttribute(MessageType messageType, bool throwException = true)
         {
             if (!Enum.IsDefined(typeof(MessageType), messageType))

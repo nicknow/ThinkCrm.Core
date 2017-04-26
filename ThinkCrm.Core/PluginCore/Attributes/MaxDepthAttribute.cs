@@ -12,7 +12,7 @@ namespace ThinkCrm.Core.PluginCore.Attributes
         private readonly bool _throwException;
 
         /// <summary>
-        /// 
+        /// Ensures that <see cref="IPluginExecutionContext.Depth"/> does not exceed a specified value.
         /// </summary>
         /// <param name="maxDepth">When the IPluginExecutionContext.Depth is greater than this number validation will fail.</param>
         /// <param name="throwException">Default is false which causes the plugin to end gracefully. Set to true to result in an Exceeption being raised</param>
