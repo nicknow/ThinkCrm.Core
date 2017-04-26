@@ -19,7 +19,7 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>ThinkCrm.Core</Id>
-    <Version>0.1.2-beta</Version>
+    <Version>0.1.3-beta</Version>
     <Title>ThinkCrm.Core</Title>
     <Authors>Nicolas Nowinski</Authors>
     <Owners>Nicolas Nowinski</Owners>
