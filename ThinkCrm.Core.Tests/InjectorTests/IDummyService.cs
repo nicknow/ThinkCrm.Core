@@ -10,4 +10,9 @@ namespace ThinkCrm.Core.Tests.InjectorTests
     {
         bool Callme();
     }
+
+    interface IDummyService2
+    {
+        bool Callme();
+    }
 }

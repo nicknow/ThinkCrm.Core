@@ -7,7 +7,18 @@ namespace ThinkCrm.Core.Injector
     public class InjectorService : IInjectorService
     {
         //Make Tuple bool value True if Object should be created new on each request
-        private readonly Dictionary<Type, Tuple<bool, object>> _objectDictionary = new Dictionary<Type, Tuple<bool,object>>();        
+        private readonly Dictionary<Type, Tuple<bool, object>> _objectDictionary = new Dictionary<Type, Tuple<bool,object>>();
+
+        public InjectorService(params IInjectable[] injectables)
+        {
+            if (injectables != null && injectables.Length > 0)
+            {
+                foreach (var injectable in injectables)
+                {
+                    injectable.Register(this);
+                }
+            }
+        }
 
         /// <summary>
         /// Register a type that will be instantiated using a new() constructor each time it is requested.

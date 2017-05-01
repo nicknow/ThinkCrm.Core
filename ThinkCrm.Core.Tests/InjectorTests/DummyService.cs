@@ -13,4 +13,12 @@ namespace ThinkCrm.Core.Tests.InjectorTests
             return true;
         }
     }
+
+    class DummyService2 : IDummyService2
+    {
+        public bool Callme()
+        {
+            return true;
+        }
+    }
 }

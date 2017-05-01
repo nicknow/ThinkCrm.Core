@@ -69,6 +69,9 @@
   <ItemGroup>
     <Compile Include="CrmService\CrmService.cs" />
     <Compile Include="CrmService\NullLogger.cs" />
+    <Compile Include="Injector\InjectableObject.cs" />
+    <Compile Include="Injector\InjectableType.cs" />
+    <Compile Include="Interfaces\IInjectable.cs" />
     <Compile Include="Interfaces\IInjectorService.cs" />
     <Compile Include="Injector\InjectorService.cs" />
     <Compile Include="Interfaces\ICrmService.cs" />
