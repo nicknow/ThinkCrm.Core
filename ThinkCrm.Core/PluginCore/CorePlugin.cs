@@ -24,6 +24,16 @@ namespace ThinkCrm.Core.PluginCore
             
         }
 
+        protected CorePlugin(string unsecureConfiguration) : this(new InjectorService())
+        {
+
+        }
+
+        protected CorePlugin(string unsecureConfiguration, string secureConfiguration) : this(new InjectorService())
+        {
+
+        }
+
         protected CorePlugin(IInjectorService injectorService)
         {
             if (injectorService == null) throw new ArgumentNullException(nameof(injectorService));
