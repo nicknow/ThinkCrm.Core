@@ -65,49 +65,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrmService\CrmService.cs" />
-    <Compile Include="CrmService\NullLogger.cs" />
-    <Compile Include="Injector\InjectableObject.cs" />
-    <Compile Include="Injector\InjectableType.cs" />
-    <Compile Include="Interfaces\IInjectable.cs" />
-    <Compile Include="Interfaces\IInjectorService.cs" />
-    <Compile Include="Injector\InjectorService.cs" />
-    <Compile Include="Interfaces\ICrmService.cs" />
-    <Compile Include="Interfaces\ILogging.cs" />
-    <Compile Include="Interfaces\ILoggingListener.cs" />
-    <Compile Include="Interfaces\IPluginSetup.cs" />
-    <Compile Include="Interfaces\IPluginSetupHelper.cs" />
-    <Compile Include="Interfaces\IPluginValidator.cs" />
-    <Compile Include="Interfaces\IValidationBuilder.cs" />
-    <Compile Include="PluginCore\Attributes\InputParameterCheckAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\MaxDepthAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\PipelineAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\PluginRegistrationAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\RequiredImage.cs" />
-    <Compile Include="PluginCore\Attributes\SkipValidationChecksAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\TargetEntityAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\TargetEntityReferenceAttribute.cs" />
-    <Compile Include="PluginCore\Attributes\TargetGenericAttribute.cs" />
-    <Compile Include="PluginCore\CorePlugin.cs" />
-    <Compile Include="PluginCore\Helper\CrmHelperExtensions.cs" />
-    <Compile Include="PluginCore\Helper\OptionSetValues.cs" />
-    <Compile Include="PluginCore\Helper\PluginConstants.cs" />
-    <Compile Include="PluginCore\Helper\PluginSetup.cs" />
-    <Compile Include="PluginCore\Helper\PluginSetupHelper.cs" />
-    <Compile Include="PluginCore\Logging\LocalLogger.cs" />
-    <Compile Include="PluginCore\Logging\Logger.cs" />
-    <Compile Include="PluginCore\Logging\LogToCrmTracingService.cs" />
-    <Compile Include="PluginCore\Logging\LogToStringBuilder.cs" />
-    <Compile Include="PluginCore\Logging\NonSandboxedExceptionLogging.cs" />
-    <Compile Include="PluginCore\Logging\NullLogger.cs" />
-    <Compile Include="PluginCore\Logging\SandboxedExceptionHandling.cs" />
-    <Compile Include="PluginCore\Validator\ValidationBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="ThinkCrm.Core.Key.snk" />
   </ItemGroup>
+  <Import Project="..\ThinkCrm.Shared.Core\ThinkCrm.Shared.Core.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

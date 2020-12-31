@@ -13,6 +13,8 @@ namespace ThinkCrm.Core.PluginCore
 {
     public abstract class CorePlugin : IPlugin
     {
+        private readonly string _unsecureConfiguration;
+        private readonly string _secureConfiguration;
 
         protected readonly string ClassName;
         private ValidationBuilder _validationBuilder;
@@ -26,19 +28,19 @@ namespace ThinkCrm.Core.PluginCore
 
         protected CorePlugin(string unsecureConfiguration) : this(new InjectorService())
         {
-
+            _unsecureConfiguration = unsecureConfiguration;
         }
 
         protected CorePlugin(string unsecureConfiguration, string secureConfiguration) : this(new InjectorService())
         {
-
+            _unsecureConfiguration = unsecureConfiguration;
+            _secureConfiguration = secureConfiguration;
         }
 
         protected CorePlugin(IInjectorService injectorService)
         {
-            if (injectorService == null) throw new ArgumentNullException(nameof(injectorService));
             ClassName = GetType().FullName;
-            ObjectProviderService = injectorService;
+            ObjectProviderService = injectorService ?? throw new ArgumentNullException(nameof(injectorService));
         }
 
         public void Execute(IServiceProvider serviceProvider)
@@ -47,7 +49,7 @@ namespace ThinkCrm.Core.PluginCore
             {
                 var tracing = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
                 tracing.Trace("Started Execute");
-                var p = new PluginSetup(serviceProvider, ClassName);                
+                var p = new PluginSetup(serviceProvider, ClassName, _unsecureConfiguration, _secureConfiguration);                
                 CoreExecute(p);
             }
             catch (InvalidPluginExecutionException)

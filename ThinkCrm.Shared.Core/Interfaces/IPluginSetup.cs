@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Xrm.Sdk;
+using thinkFlow.SimpleWorkflow.Plugins.Workers;
 
 namespace ThinkCrm.Core.Interfaces
 {
@@ -14,5 +15,8 @@ namespace ThinkCrm.Core.Interfaces
         ICrmService SystemService { get; }
         ILogging Logging { get; }
         ICrmService GetService(Guid? userId);
+        string UnsecureConfiguration { get; }
+        string SecureConfiguration { get; }
+
     }
 }

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6ce70916-8fbc-4b6d-8d7a-ad9677bf5591</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ThinkCrm.Shared.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CrmService\CrmService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrmService\NullLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Injector\InjectableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Injector\InjectableType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Injector\InjectorService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICrmService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IInjectable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IInjectorService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILogging.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ILoggingListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPluginSetup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPluginSetupHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPluginValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IValidationBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\InputParameterCheckAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\MaxDepthAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\PipelineAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\PluginRegistrationAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\RequiredImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\SkipValidationChecksAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\TargetEntityAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\TargetEntityReferenceAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Attributes\TargetGenericAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\CorePlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Helper\CrmHelperExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Helper\OptionSetValues.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Helper\PluginConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Helper\PluginSetup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Helper\PluginSetupHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\LocalLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\LogToCrmTracingService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\LogToStringBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\NonSandboxedExceptionLogging.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\NullLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Logging\SandboxedExceptionHandling.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PluginCore\Validator\ValidationBuilder.cs" />
+  </ItemGroup>
+</Project>

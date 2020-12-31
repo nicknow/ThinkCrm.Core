@@ -17,14 +17,18 @@ namespace ThinkCrm.Core.PluginCore.Helper
         private IPluginSetupHelper _helper;
 
         private readonly string _pluginName;
+        private readonly string _unsecureConfiguration;
+        private readonly string _secureConfiguration;
 
-        public PluginSetup(IServiceProvider serviceProvider, string pluginName = "")
+        public PluginSetup(IServiceProvider serviceProvider, string pluginName = "", string unsecureConfiguration = "", string secureConfiguration = "")
         {
             if (serviceProvider == null) throw new Exception("PluginSetup requires a valid IServiceProvider.");
 
             _serviceProvider = serviceProvider;
             _pluginName = pluginName;
             _serviceDictionary = new Dictionary<Guid, ICrmService>();
+            _secureConfiguration = secureConfiguration;
+            _unsecureConfiguration = unsecureConfiguration;
         }
 
         public IServiceProvider ServiceProvider => _serviceProvider;
@@ -75,6 +79,10 @@ namespace ThinkCrm.Core.PluginCore.Helper
 
             return _serviceDictionary[userId ?? Guid.Empty];
         }
+
+        public string UnsecureConfiguration => _unsecureConfiguration;
+
+        public string SecureConfiguration => _secureConfiguration;
 
         private IOrganizationService InternalNewService(Guid? userId) => ServiceFactory.CreateOrganizationService(userId);
 
