@@ -1,6 +1,5 @@
 using System;
 using Microsoft.Xrm.Sdk;
-using thinkFlow.SimpleWorkflow.Plugins.Workers;
 
 namespace ThinkCrm.Core.Interfaces
 {
