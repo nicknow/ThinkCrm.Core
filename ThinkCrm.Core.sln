@@ -1,19 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30128.74
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkCrm.Core.Tests", "ThinkCrm.Core.Tests\ThinkCrm.Core.Tests.csproj", "{BF6F8373-EE09-4CA6-A4C5-15400CB4885D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkCrm.Core", "ThinkCrm.Core\ThinkCrm.Core.csproj", "{D6F4C970-D63A-4DB7-9153-B776F6491224}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThinkCrm.Shared.Core", "ThinkCrm.Shared.Core\ThinkCrm.Shared.Core.shproj", "{6CE70916-8FBC-4B6D-8D7A-AD9677BF5591}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkCrm.Core", "ThinkCrm.Core\ThinkCrm.Core.csproj", "{402BDE4B-01E1-4DF4-8973-345DC8F3D3C8}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		ThinkCrm.Shared.Core\ThinkCrm.Shared.Core.projitems*{6ce70916-8fbc-4b6d-8d7a-ad9677bf5591}*SharedItemsImports = 13
-		ThinkCrm.Shared.Core\ThinkCrm.Shared.Core.projitems*{d6f4c970-d63a-4db7-9153-b776f6491224}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -23,10 +17,10 @@ Global
 		{BF6F8373-EE09-4CA6-A4C5-15400CB4885D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF6F8373-EE09-4CA6-A4C5-15400CB4885D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF6F8373-EE09-4CA6-A4C5-15400CB4885D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6F4C970-D63A-4DB7-9153-B776F6491224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6F4C970-D63A-4DB7-9153-B776F6491224}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6F4C970-D63A-4DB7-9153-B776F6491224}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6F4C970-D63A-4DB7-9153-B776F6491224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402BDE4B-01E1-4DF4-8973-345DC8F3D3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402BDE4B-01E1-4DF4-8973-345DC8F3D3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402BDE4B-01E1-4DF4-8973-345DC8F3D3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402BDE4B-01E1-4DF4-8973-345DC8F3D3C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,11 +18,9 @@ namespace ThinkCrm.Core.PluginCore.Attributes
         /// <param name="throwException">Set to true to throw exception or false to end gracefully</param>
         public InputParameterCheckAttribute(string name, Type type, bool throwException = true)
         {
-            if (name == null) throw new ArgumentNullException(nameof(name));
-            if (type == null) throw new ArgumentNullException(nameof(type));
             _throwException = throwException;
-            _name = name;
-            _type = type;
+            _name = name ?? throw new ArgumentNullException(nameof(name));
+            _type = type ?? throw new ArgumentNullException(nameof(type));
         }
 
         public bool Validate(IPluginExecutionContext context, out bool throwException, out string errorMessage)
@@ -36,7 +34,7 @@ namespace ThinkCrm.Core.PluginCore.Attributes
             else
             {
                 throwException = _throwException;
-                errorMessage = $"Validation Failed on InputParameter Contains={_name} and Type={_type.ToString()}";
+                errorMessage = $"Validation Failed on InputParameter Contains={_name} and Type={_type}";
                 return false;
             }
         }
